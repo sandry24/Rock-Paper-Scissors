@@ -1,4 +1,6 @@
 const choices = ["rock", "paper", "scissors"];
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice(){
     let index = Math.floor(Math.random() * 3);
@@ -6,12 +8,45 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let index = 0;
-    do {
-        index = parseInt(prompt("What do you choose?\n0 - rock\n1 - paper\n2 - scissors"));
-    } while (index < 0 || index > 2);
-    return choices[index];
+    let choice = "";
+    while (!choices.find(c => c.toLowerCase() === choice.toLowerCase()))
+        choice = prompt("What do you choose?");
+    return choice;
 }
 
-console.log(getComputerChoice());
-console.log(getHumanChoice());
+function playRound(humanChoice, computerChoice){
+    humanChoice = humanChoice.toLowerCase();
+    
+    if (humanChoice === computerChoice){
+        console.log("It's a tie!");
+    } else if (humanChoice === "rock"){
+        if (computerChoice === "paper"){
+            console.log("You lost! Paper beats rock!");
+            computerScore++;
+        } else {
+            console.log("You won! Rock beats scissors!");
+            humanScore++;
+        }
+    } else if (humanChoice === "paper"){
+        if (computerChoice === "rock"){
+            console.log("You won! Paper beats rock!");
+            humanScore++;
+        } else {
+            console.log("You lost! Scissors beats paper!");
+            computerScore++;
+        }
+    } else {
+        if (computerChoice === "rock"){
+            console.log("You lost! Rock beats scissors!");
+            computerScore++;
+        } else {
+            console.log("You won! Scissors beats paper!");
+            humanScore++;
+        }
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
