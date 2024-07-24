@@ -9,16 +9,15 @@
         <h1 class="heading">Rock Paper Scissors</h1>
         <h3 class="instructions">Click the buttons below to choose</h3>
         <div class="buttons">
-            <button id="rock-button">Rock</button>
-            <button id="paper-button">Paper</button>
-            <button id="scissors-button">Scissors</button>
+            <button id="rock-button" class="choice-button">Rock</button>
+            <button id="paper-button" class="choice-button">Paper</button>
+            <button id="scissors-button" class="choice-button">Scissors</button>
         </div>
         <div id="results">
-            <p id="human-score" class="score">Human score: 0</p>
-            <p id="computer-score" class="score">Computer score: 0</p>
-            <p id="human-text" class="text"></p>
-            <p id="computer-text" class="text"></p>
+            <p class="score">Human score: <span id="human-score">0</span></p>
+            <p class="score">Computer score: <span id="computer-score">0</span></p>
             <p id="result-text" class="text"></p>
+            <button id="reset-button" class="hidden">Try Again?</button>
         </div>
     </body>
 </html>

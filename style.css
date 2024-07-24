@@ -3,6 +3,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.hidden {
+    display: none;
+}
+
 .buttons {
     display: flex;
     justify-content: center;
@@ -10,7 +14,7 @@ body {
     margin: 64px;
 }
 
-button {
+.choice-button {
     height: 100px;
     width: 100px;
     border: 2px solid black;
