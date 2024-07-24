@@ -1,16 +1,17 @@
 const choices = ["rock", "paper", "scissors"];
 let computerScore = 0;
 let humanScore = 0;
-let rock = document.querySelector("#rock-button");
-let paper = document.querySelector("#paper-button");
-let scissors = document.querySelector("#scissors-button");
-let divResults = document.querySelector("#results");
-let pHumanScore = document.querySelector("#human-score");
-let pComputerScore = document.querySelector("#computer-score");
-let pHuman = document.querySelector("#human-text");
-let pComputer = document.querySelector("#computer-text");
-let pResult = document.querySelector("#result-text");
-let resetButton = document.querySelector("#reset-button");
+
+const rock = document.querySelector("#rock-button");
+const paper = document.querySelector("#paper-button");
+const scissors = document.querySelector("#scissors-button");
+const divResults = document.querySelector("#results");
+const pHumanScore = document.querySelector("#human-score");
+const pComputerScore = document.querySelector("#computer-score");
+const pHuman = document.querySelector("#human-text");
+const pComputer = document.querySelector("#computer-text");
+const pResult = document.querySelector("#result-text");
+const resetButton = document.querySelector("#reset-button");
 
 resetButton.addEventListener("click", resetGame);
 
@@ -27,7 +28,7 @@ scissors.addEventListener("click", () => {
 function playRound(humanChoice, computerChoice){
     humanChoice = humanChoice.toLowerCase();
     
-    let winner = determineWinner(humanChoice, computerChoice);
+    const winner = determineWinner(humanChoice, computerChoice);
     updateScores(winner);
     updateMessage(humanChoice, computerChoice, winner);
     checkForGameEnd();
